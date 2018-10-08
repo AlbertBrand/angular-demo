@@ -1,14 +1,10 @@
 <ol class="speakers">
-  <li>
-    <a href="https://twitter.com/{{speaker.twitter}}" class="avatar">
+  <li *ngFor="let speaker of speakers">
+    <a href="https://twitter.com/{{speaker.twitter}}" class="avatar" (click)="onSelect($event, speaker)">
       <img src="{{speaker.imgUrl}}" alt="{{speaker.name}}" />
       <h3>{{speaker.name}}</h3>
     </a>
   </li>
 </ol>
 
-<h3>New speaker</h3>
-
-<label>name
-  <input [(ngModel)]="speaker.name" placeholder="name">
-</label>
+<app-speaker-detail [speaker]="speaker"></app-speaker-detail>

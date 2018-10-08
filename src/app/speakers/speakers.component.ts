@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Speaker } from '../speaker';
+import { SPEAKERS } from '../speakers';
 
 @Component({
   selector: 'app-speakers',
@@ -7,15 +8,21 @@ import { Speaker } from '../speaker';
   styleUrls: ['./speakers.component.css']
 })
 export class SpeakersComponent implements OnInit {
+  speakers = SPEAKERS;
   speaker: Speaker = {
-    name: 'Albert Brand',
-    twitter: 'al_bert_brand',
-    imgUrl: 'https://cmda-tt.github.io/course-18-19/albert.jpg',
-  }
+    name: '',
+    twitter: '',
+    imgUrl: '',
+  };
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelect(event: Event, speaker: Speaker) {
+    event.preventDefault();
+    this.speaker = speaker;
   }
 
 }
