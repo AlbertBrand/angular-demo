@@ -7,4 +7,7 @@
   </li>
 </ol>
 
-<app-speaker-detail [speaker]="speaker"></app-speaker-detail>
+<button (click)="createNewSpeaker()">Create new speaker</button>
+<button *ngIf="selectedSpeaker" (click)="deleteSelectedSpeaker()">Delete selected speaker</button>
+
+<app-speaker-detail *ngIf="selectedSpeaker" [speaker]="selectedSpeaker"></app-speaker-detail>

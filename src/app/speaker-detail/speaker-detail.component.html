@@ -1,13 +1,22 @@
 <h3>Speaker detail</h3>
 
-<label>Name
-  <input [(ngModel)]="speaker.name" placeholder="name">
-</label>
+<form #speakerForm="ngForm">
+  <label>Name
+    <input name="name" [(ngModel)]="speaker.name" placeholder="name" required #name="ngModel">
+    <div [hidden]="name.valid || name.pristine" class="alert">
+      Name is required
+    </div>
+  </label>
 
-<label>Twitter handle
-  <input [(ngModel)]="speaker.twitter" placeholder="twitter">
-</label>
 
-<label>Image URL
-  <input [(ngModel)]="speaker.imgUrl" placeholder="image url">
-</label>
+  <label>Twitter handle
+    <input name="twitter" [(ngModel)]="speaker.twitter" placeholder="twitter">
+  </label>
+
+  <label>Image URL
+    <input name="imgUrl" [(ngModel)]="speaker.imgUrl" placeholder="image url" required #imgUrl="ngModel">
+    <div [hidden]="imgUrl.valid || imgUrl.pristine" class="alert">
+      URL is required
+    </div>
+  </label>
+</form>

@@ -9,11 +9,7 @@ import { SPEAKERS } from '../speakers';
 })
 export class SpeakersComponent implements OnInit {
   speakers = SPEAKERS;
-  speaker: Speaker = {
-    name: '',
-    twitter: '',
-    imgUrl: '',
-  };
+  selectedSpeaker?: Speaker;
 
   constructor() { }
 
@@ -22,7 +18,22 @@ export class SpeakersComponent implements OnInit {
 
   onSelect(event: Event, speaker: Speaker) {
     event.preventDefault();
-    this.speaker = speaker;
+    this.selectedSpeaker = speaker;
+  }
+
+  createNewSpeaker() {
+    const newSpeaker = {
+      name: '',
+      twitter: '',
+      imgUrl: '',
+    }
+    this.speakers.push(newSpeaker);
+    this.selectedSpeaker = newSpeaker;
+  }
+
+  deleteSelectedSpeaker() {
+    this.speakers = this.speakers.filter(speaker => speaker !== this.selectedSpeaker)
+    delete this.selectedSpeaker;
   }
 
 }
