@@ -26,14 +26,13 @@ export class SpeakersComponent implements OnInit {
       name: '',
       twitter: '',
       imgUrl: '',
-    }
+    };
     this.speakers.push(newSpeaker);
     this.selectedSpeaker = newSpeaker;
   }
 
   deleteSelectedSpeaker() {
-    this.speakers = this.speakers.filter(speaker => speaker !== this.selectedSpeaker)
+    this.speakers = this.speakers.filter(speaker => speaker !== this.selectedSpeaker);
     delete this.selectedSpeaker;
   }
-
 }

@@ -14,11 +14,11 @@ describe('CMD App', () => {
 
   it('opens details for speaker', () => {
     page.clickFirstSpeaker();
-    expect(page.getNameInput()).toEqual('Albert Brand')
-  })
+    expect(page.getNameInput()).toEqual('Albert Brand');
+  });
 
   it('updates name when input changes', () => {
     page.updateName('abc');
-    expect(page.getFirstSpeakerName()).toEqual('abc')
-  })
+    expect(page.getFirstSpeakerName()).toEqual('abc');
+  });
 });
