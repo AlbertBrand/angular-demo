@@ -1,0 +1,14 @@
+<ol class="speakers">
+  <li>
+    <a href="https://twitter.com/{{speaker.twitter}}" class="avatar">
+      <img src="{{speaker.imgUrl}}" alt="{{speaker.name}}" />
+      <h3>{{speaker.name}}</h3>
+    </a>
+  </li>
+</ol>
+
+<h3>New speaker</h3>
+
+<label>name
+  <input [(ngModel)]="speaker.name" placeholder="name">
+</label>
